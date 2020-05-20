@@ -1,0 +1,23 @@
+<apex:page controller="EventRegistrationPageController">
+    <apex:form >
+        <apex:pageBlock title="Register for an Event" mode="edit">
+            <apex:pageMessages />
+            <apex:pageBlockSection title="Registration Form" columns="1">
+                <p>Please complete the form below to register for an event =)</p>
+                <apex:image url="{!$Resource.MtShasta}" width="200" height="100"/>
+                <apex:selectList value="{!selectedEventId}" size="1">
+                    <apex:actionSupport event="onchange"  action="{!updatePrice}" reRender="out" />
+                    <apex:selectOptions value="{!Options}"/>     
+                </apex:selectList>
+                <apex:outputField id="out" value="{!eventRecord.Price__c}"/>
+                <apex:inputField value="{!Registration.First_Name__c}"/>
+                <apex:inputField value="{!Registration.Last_Name__c}"/>
+                <apex:inputField value="{!Registration.Email__c}"/>
+                <apex:inputField value="{!Registration.Address__c}"/>  
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                        <apex:commandButton action="{!saveForm}" value="Register" title="Register"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
