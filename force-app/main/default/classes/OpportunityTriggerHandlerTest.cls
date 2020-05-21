@@ -130,7 +130,7 @@ public class OpportunityTriggerHandlerTest {
         System.debug('****oppsList.get(0).StageName: ' + oppsList.get(0).StageName);
         
         for(Integer i = 100; i < 150; i++) {
-            //oppsList.get(i).StageName = 'Proposal Price/Quote';
+            oppsList.get(i).StageName = 'Proposal Price/Quote';
         System.debug('****oppsList.get(100).StageName: ' + oppsList.get(100).StageName);
         }
         
@@ -142,6 +142,7 @@ public class OpportunityTriggerHandlerTest {
         
         try {
         	update oppsList;
+            System.assert(false);
         } catch (Exception e) {
             Boolean expectedExceptionThrown = e.getMessage().contains('You must add the required Contact Roles in order to move the Opportunity to this Stage.');
 			System.AssertEquals(expectedExceptionThrown, true);

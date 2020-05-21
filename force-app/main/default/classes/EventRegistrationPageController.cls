@@ -36,6 +36,8 @@ public without sharing class EventRegistrationPageController {
         else eventRecord = null;
         return null;
     }
+    // can cache the result of the query
+    //set an instance variable that would hold eventLIst query in line 17
     
     public void saveForm(){
         Registration__c reg = new Registration__c();
